@@ -7,7 +7,7 @@
 			</div>
 		</div>
 		<div class="row g-4">
-			<div class="col-sm-6 col-xl-3">
+			<div class="col-12 col-sm-6">
 				<div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
 					<i class="fa-thin fa-container-storage fa-3x text-primary"></i>
 					<div class="ms-3">
@@ -16,7 +16,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-xl-3">
+			<div class="col-12 col-sm-6">
 				<div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
 					<i class="fa-thin fa-container-storage fa-3x text-primary"></i>
 					<div class="ms-3">
@@ -25,7 +25,22 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-xl-3">
+		</div>
+		<div class="row g-4 mt-1">
+			<div class="col-12 col-sm-4">
+				<div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+					@include('components.icon', [
+						'prefix' => 'fa-solid',
+						'icon' => 'fa-clock',
+						'classes' => 'fa-3x text-primary',
+					])
+					<div class="ms-3">
+						<p class="mb-2">Serverzeit <span class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></span></p>
+						<h6 class="mb-0 text-end">{{ $server_time }}</h6>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-4">
 				<div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
 					<i class="fa-thin fa-container-storage fa-3x text-primary"></i>
 					<div class="ms-3">
@@ -34,7 +49,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-xl-3">
+			<div class="col-12 col-sm-4">
 				<div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
 					<i class="fa-thin fa-container-storage fa-3x text-primary"></i>
 					<div class="ms-3">
@@ -46,6 +61,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="mt-4 col-6">
 			<form class="" method="POST" action="{{ route('einlagern') }}">
 				<h3 class="m-2">Gegenstände einlagern</h3>

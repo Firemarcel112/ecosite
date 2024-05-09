@@ -20,9 +20,27 @@ class ServerInfoMiddleware
 	{
 		$api_frontpage = $this->getEcoUrl('Info')['data'];
 
+		$timeSinceStart = $api_frontpage['TimeSinceStart'] ?? 0;
+		$timeLeft = $api_frontpage['TimeLeft'] ?? 0;
+
+		$daysSinceStart = floor($timeSinceStart / (60 * 60 * 24));
+
+		$currentTime = abs($timeSinceStart) % (60 * 60 * 24);
+		$currentHours = floor($currentTime / (60 * 60));
+		$currentMinutes = floor(($currentTime % (60 * 60)) / 60);
+		$currentSeconds = $currentTime % 60;
+
+		$server_time = $this->makeDateString($daysSinceStart + 1, $currentHours, $currentMinutes, $currentSeconds);
+
 		View::share([
-			'server_info' => $api_frontpage
+			'server_info' => $api_frontpage,
+			'server_time' => $server_time,
 		]);
 		return $next($request);
+	}
+
+	private function makeDateString($tage, $stunden, $minuten, $sekunden): string
+	{
+		return  "Tag " . ($tage) . " , " . sprintf("%02d", $stunden) . ":" . sprintf("%02d", $minuten) . ":" . sprintf("%02d", $sekunden);
 	}
 }

@@ -5,10 +5,17 @@
 	<div class="container-fluid position-relative d-flex p-0">
 		@include('components.spinner')
 
+
 		@include('layouts.sidebar')
 		<div class="content">
+
 			@include('layouts.navigation')
 				<div class="container-fluid pt-4 px-4">
+					@if(is_null($server_info))
+						<div class="alert alert-danger fade show" role="alert">
+							SERVER IST OFFLINE
+						</div>
+					@endif
 					@include('layouts.alerts')
 				</div>
 				@yield('content')

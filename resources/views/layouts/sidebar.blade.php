@@ -32,13 +32,20 @@
 			</div>
 			<div class="nav-item">
 				<a href="{{ route('gegenstaende.index') }}" class="nav-link @if(request()->is('gegenstaende')) active @endif">
-					<i class="fa fa-th me-2"></i>
+					@include('components.icon', [
+						'icon' => 'fa-th-large',
+						'classes' => 'me-2',
+					])
 					Gegenstände
 				</a>
 			</div>
 			<div class="nav-item">
 				<a href="{{ route('stack.index') }}" class="nav-link @if(request()->is('stack')) active @endif">
-					<i class="fa fa-th me-2"></i>
+					@include('components.icon', [
+						'prefix' => 'fa-solid',
+						'icon' => 'fa-layer-group',
+						'classes' => 'me-2',
+					])
 					Stackverzeichnis
 				</a>
 			</div>
