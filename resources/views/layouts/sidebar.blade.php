@@ -42,6 +42,16 @@
 					Stackverzeichnis
 				</a>
 			</div>
+			<div class="nav-item">
+				<a href="{{ env('ECO_API_URL') }}" target="_blank" class="nav-link">
+					@include('components.icon', [
+						'prefix' => 'fa-solid',
+						'icon' => 'fa-globe',
+						'classes' => 'me-2',
+ 					])
+					ECO UI
+				</a>
+			</div>
 		</div>
 	</nav>
 </div>

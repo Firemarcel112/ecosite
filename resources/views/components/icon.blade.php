@@ -1,4 +1,4 @@
-<i class="fas {{ $icon }} {{ $classes ?? '' }}"
+<i class="{{ $prefix ?? 'fas' }} {{ $icon }} {{ $classes ?? '' }}"
 	@if(!empty($hovertext))
 		data-bs-trigger="hover"
 		data-bs-toggle="popover"

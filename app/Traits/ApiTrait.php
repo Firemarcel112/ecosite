@@ -19,14 +19,13 @@ trait ApiTrait
 			$access = env('ECO_API_TOKEN');
 
 			$get_parameter = [
-				'authtoken' => $access,
-				'authtokentype' => 'slg',
+				'api_key' => env('ECHO_API_TOKEN'),
 			];
 			$get_parameter += $parameters;
 			$response = null;
 			try
 			{
-				$response = Http::get($url, [$get_parameter]);
+				$response = Http::get($url, $get_parameter);
 			} catch(\Exception $e)
 			{
 
