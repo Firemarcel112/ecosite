@@ -16,10 +16,9 @@ trait ApiTrait
 		return Cache::remember($url, 60, function() use($url, $parameters)
 		{
 			$url = env('ECO_API_URL') . $url;
-			$access = env('ECO_API_TOKEN');
 
 			$get_parameter = [
-				'api_key' => env('ECHO_API_TOKEN'),
+				'api_key' => env('ECO_API_TOKEN'),
 			];
 			$get_parameter += $parameters;
 			$response = null;
