@@ -30,7 +30,7 @@ class ServerInfoMiddleware
 		$currentMinutes = floor(($currentTime % (60 * 60)) / 60);
 		$currentSeconds = $currentTime % 60;
 
-		$server_time = $this->makeDateString($daysSinceStart + 1, $currentHours, $currentMinutes, $currentSeconds);
+		$server_time = $this->makeDateString($daysSinceStart, $currentHours, $currentMinutes, $currentSeconds);
 
 		View::share([
 			'server_info' => $api_frontpage,
