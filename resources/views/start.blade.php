@@ -35,7 +35,7 @@
 						'classes' => 'fa-3x text-primary',
 					])
 					<div class="ms-3">
-						<p class="mb-2">Serverzeit <span class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></span></p>
+						<p class="mb-2">Serverzeit</p>
 						<h6 class="mb-0 text-end">{{ $server_time }}</h6>
 					</div>
 				</div>
