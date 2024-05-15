@@ -11,7 +11,7 @@
 
 			@include('layouts.navigation')
 				<div class="container-fluid pt-4 px-4">
-					@if(is_null($server_info))
+					@if(is_null($server_info) || empty($server_info))
 						<div class="alert alert-danger fade show" role="alert">
 							SERVER IST OFFLINE
 						</div>
