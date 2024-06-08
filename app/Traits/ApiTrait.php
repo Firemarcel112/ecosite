@@ -11,7 +11,7 @@ trait ApiTrait
 	{
 		if(config('app.debug'))
 		{
-			Cache::clear();
+			Cache::forget($url);
 		}
 		return Cache::remember($url, 60, function() use($url, $parameters)
 		{

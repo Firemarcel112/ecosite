@@ -50,6 +50,16 @@
 				</a>
 			</div>
 			<div class="nav-item">
+				<a href="{{ route('aufgaben.index') }}" class="nav-link @if(request()->is('aufgaben')) active @endif">
+					@include('components.icon', [
+						'prefix' => 'fa-solid',
+						'icon' => 'fa-bars-progress',
+						'classes' => 'me-2',
+					])
+					Aufgaben
+				</a>
+			</div>
+			<div class="nav-item">
 				<a href="{{ env('ECO_API_URL') }}" target="_blank" class="nav-link">
 					@include('components.icon', [
 						'prefix' => 'fa-solid',
