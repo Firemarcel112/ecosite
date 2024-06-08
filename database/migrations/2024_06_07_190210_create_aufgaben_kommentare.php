@@ -11,15 +11,12 @@ return new class extends Migration
 	 */
 	public function up(): void
 	{
-		Schema::create('gegenstaende_lager', function (Blueprint $table) {
-			$table->integerIncrements('gegenstand_lager_id');
-			$table->integer('lager_id');
-			$table->integer('gegenstand_id');
-			$table->integer('anzahl');
+		Schema::create('aufgaben_kommentare', function (Blueprint $table) {
+			$table->integerIncrements('aufgaben_kommentar_id');
+			$table->integer('aufgaben_id');
+			$table->integer('author_id');
+			$table->string('text');
 			$table->timestamps();
-			$table->softDeletes();
-
-			$table->unique(['gegenstand_id', 'lager_id']);
 		});
 	}
 
@@ -28,6 +25,6 @@ return new class extends Migration
 	 */
 	public function down(): void
 	{
-		Schema::dropIfExists('gegenstaende_lager');
+		Schema::dropIfExists('aufgaben_kommentare');
 	}
 };

@@ -128,4 +128,23 @@ Route::middleware(['auth'])
 					->name('delete.permanent');
 			});
 
+		Route::prefix('aufgaben')
+			->name('aufgaben.')
+			->controller($controller. 'AufgabenController')
+			->group(function () {
+				Route::get('', 'index')
+					->name('index');
+				Route::post('', 'store')
+					->name('store');
+				Route::get('aufgaben/{id}', 'show')
+					->name('show');
+
+				Route::post('aufgaben/kommentar', 'comment')
+					->name('comment');
+				Route::post('update/{id}', 'update')
+					->name('update');
+
+				Route::get('loeschen/{id}', 'destroy')
+					->name('delete');
+			});
 	});
